@@ -7,7 +7,18 @@
 
 import UIKit
 
+protocol LoginViewProtocol: AnyObject {
+	func actionLoginButton()
+	func actionRegisterButton()
+}
+
 class LoginView: UIView {
+	
+	private weak var delegate: LoginViewProtocol?
+	
+	func delegate(delegate:LoginViewProtocol?){
+		self.delegate = delegate
+	}
 
 	lazy var loginLabel: UILabel = {
 		let label = UILabel()
@@ -61,6 +72,7 @@ class LoginView: UIView {
 		button.clipsToBounds = true
 		button.layer.cornerRadius = 7.5
 		button.backgroundColor = UIColor(red: 3/255, green: 58/255, blue: 51/255, alpha: 1.0)
+		button.addTarget(self, action: #selector(self.tappedLoginButton), for: .touchUpInside)
 		return button
 	}()
 	
@@ -70,6 +82,7 @@ class LoginView: UIView {
 		button.setTitle("Cadastre-se", for: .normal)
 		button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
 		button.setTitleColor(.white, for: .normal)
+		button.addTarget(self, action: #selector(self.tappedRegisterButton), for: .touchUpInside)
 		return button
 	}()
 	
@@ -91,6 +104,18 @@ class LoginView: UIView {
 		addSubview(passwordTextField)
 		addSubview(loginButton)
 		addSubview(registerButton)
+	}
+	
+	public func configTextFieldDelegate(delegate: UITextFieldDelegate){
+		emailTextField.delegate = delegate
+		passwordTextField.delegate = delegate
+	}
+	
+	@objc private func tappedLoginButton(){
+		self.delegate?.actionLoginButton()
+	}
+	@objc private func tappedRegisterButton(){
+		self.delegate?.actionRegisterButton()
 	}
 	
 	required init?(coder: NSCoder) {
