@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 	
 	
 	var loginView: LoginView?
@@ -15,6 +15,7 @@ class ViewController: UIViewController {
 	override func loadView() {
 		loginView = LoginView()
 		view = loginView
+		navigationController?.isNavigationBarHidden = true
 	}
 		
 	override func viewDidLoad() {
@@ -24,19 +25,19 @@ class ViewController: UIViewController {
 	}
 }
 
-extension ViewController: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		textField.resignFirstResponder()
 	}
 }
 
-extension ViewController: LoginViewProtocol {
+extension LoginViewController: LoginViewProtocol {
 	func actionLoginButton() {
 		
 	}
 	
 	func actionRegisterButton() {
-		
+		navigationController?.pushViewController(RegisterViewController(), animated: true)
 	}
 }
