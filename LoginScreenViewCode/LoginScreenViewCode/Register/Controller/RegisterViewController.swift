@@ -9,10 +9,10 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 	
-	var registerView: RegisterView?
+	var registerView: SnapRegisterView?
 	
 	override func loadView() {
-		registerView = RegisterView()
+		registerView = SnapRegisterView()
 		view = registerView
 		navigationController?.isNavigationBarHidden = true
 	}
@@ -31,7 +31,7 @@ extension RegisterViewController: UITextFieldDelegate{
 	}
 }
 
-extension RegisterViewController: RegisterViewProtocol{
+extension RegisterViewController: SnapRegisterViewProtocol{
 	
 	func actionBackButton() {
 		navigationController?.popViewController(animated: true)
