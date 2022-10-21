@@ -10,18 +10,18 @@ import UIKit
 class LoginViewController: UIViewController {
 	
 	
-	var loginView: LoginView?
+	var snapLoginView: SnapLoginView?
 	
 	override func loadView() {
-		loginView = LoginView()
-		view = loginView
+		snapLoginView = SnapLoginView()
+		view = snapLoginView
 		navigationController?.isNavigationBarHidden = true
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		loginView?.delegate(delegate: self)
-		loginView?.configTextFieldDelegate(delegate: self)
+		snapLoginView?.delegate(delegate: self)
+		snapLoginView?.configTextFieldDelegate(delegate: self)
 	}
 }
 
@@ -32,11 +32,11 @@ extension LoginViewController: UITextFieldDelegate {
 	}
 	
 	func textFieldDidEndEditing(_ textField: UITextField) {
-		loginView?.validaTextFields()
+		snapLoginView?.validaTextFields()
 	}
 }
 
-extension LoginViewController: LoginViewProtocol {
+extension LoginViewController: SnapLoginViewProtocol {
 	func actionLoginButton() {
 		
 	}

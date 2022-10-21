@@ -22,8 +22,6 @@ class RegisterViewController: UIViewController {
 		registerView?.delegate(delegate: self)
 		registerView?.configTextFieldDelegate(delegate: self)
 	}
-	
-	
 }
 
 extension RegisterViewController: UITextFieldDelegate{
@@ -46,6 +44,4 @@ extension RegisterViewController: RegisterViewProtocol{
 	func actionRegisterButton() {
 		navigationController?.popViewController(animated: true)
 	}
-	
-	
 }
