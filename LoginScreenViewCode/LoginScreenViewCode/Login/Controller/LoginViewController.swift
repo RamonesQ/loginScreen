@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 	
 	
 	var snapLoginView: SnapLoginView?
+	var auth: Auth?
 	
 	override func loadView() {
 		snapLoginView = SnapLoginView()
@@ -20,6 +22,7 @@ class LoginViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		auth = Auth.auth()
 		snapLoginView?.delegate(delegate: self)
 		snapLoginView?.configTextFieldDelegate(delegate: self)
 	}
@@ -38,7 +41,21 @@ extension LoginViewController: UITextFieldDelegate {
 
 extension LoginViewController: SnapLoginViewProtocol {
 	func actionLoginButton() {
+		// guard let login = snapLoginView else {return}
+		guard let email = snapLoginView?.emailTextField.text else {return}
+		guard let password = snapLoginView?.passwordTextField.text else {return}
 		
+		auth?.signIn(withEmail: email, password: password, completion: { (usuario, error) in
+			if error != nil {
+				print("\(String(describing: error))")
+			} else {
+				if usuario == nil {
+					print("Tivemos um erro, tente mais tarde")
+				} else {
+					print("Usuario logado")
+				}
+			}
+		})
 	}
 	
 	func actionRegisterButton() {

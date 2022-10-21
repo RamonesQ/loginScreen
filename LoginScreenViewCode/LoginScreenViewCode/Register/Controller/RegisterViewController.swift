@@ -52,11 +52,11 @@ extension RegisterViewController: SnapRegisterViewProtocol{
 		
 		auth?.createUser(withEmail: email, password: password, completion: { (result, error) in
 			if error != nil {
-
+				print("\(String(describing: error))")
 			} else {
-				
+				print("\(email) Cadastrado")
+				self.navigationController?.popViewController(animated: true)
 			}
 		})
-		navigationController?.popViewController(animated: true)
 	}
 }
