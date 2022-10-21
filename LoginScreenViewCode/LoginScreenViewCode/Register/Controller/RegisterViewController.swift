@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
 	
 	var registerView: SnapRegisterView?
+	
+	var auth: Auth?
 	
 	override func loadView() {
 		registerView = SnapRegisterView()
@@ -21,6 +24,7 @@ class RegisterViewController: UIViewController {
 		super.viewDidLoad()
 		registerView?.delegate(delegate: self)
 		registerView?.configTextFieldDelegate(delegate: self)
+		auth = Auth.auth()
 	}
 }
 
@@ -42,6 +46,17 @@ extension RegisterViewController: SnapRegisterViewProtocol{
 	}
 	
 	func actionRegisterButton() {
+		
+		guard let email = registerView?.emailTextField.text else {return}
+		guard let password = registerView?.passwordTextField.text else {return}
+		
+		auth?.createUser(withEmail: email, password: password, completion: { (result, error) in
+			if error != nil {
+
+			} else {
+				
+			}
+		})
 		navigationController?.popViewController(animated: true)
 	}
 }

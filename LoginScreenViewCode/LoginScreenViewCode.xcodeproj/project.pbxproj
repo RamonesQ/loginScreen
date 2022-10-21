@@ -12,6 +12,7 @@
 		D24F7A582902FC8E00DFC5D5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F7A572902FC8E00DFC5D5 /* LoginView.swift */; };
 		D24F7A5A2902FCC600DFC5D5 /* SnapLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F7A592902FCC600DFC5D5 /* SnapLoginView.swift */; };
 		D24F7A5C290320DA00DFC5D5 /* SnapRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F7A5B290320DA00DFC5D5 /* SnapRegisterView.swift */; };
+		D24F7A5E2903303600DFC5D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D24F7A5D2903303600DFC5D5 /* GoogleService-Info.plist */; };
 		D2554DED2901ACD600ED01DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2554DEC2901ACD600ED01DB /* AppDelegate.swift */; };
 		D2554DEF2901ACD600ED01DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2554DEE2901ACD600ED01DB /* SceneDelegate.swift */; };
 		D2554DF12901ACD600ED01DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2554DF02901ACD600ED01DB /* LoginViewController.swift */; };
@@ -29,6 +30,7 @@
 		D24F7A572902FC8E00DFC5D5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = LoginScreenViewCode/Register/Controller/LoginView.swift; sourceTree = SOURCE_ROOT; };
 		D24F7A592902FCC600DFC5D5 /* SnapLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapLoginView.swift; path = LoginScreenViewCode/Register/Controller/SnapLoginView.swift; sourceTree = SOURCE_ROOT; };
 		D24F7A5B290320DA00DFC5D5 /* SnapRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapRegisterView.swift; sourceTree = "<group>"; };
+		D24F7A5D2903303600DFC5D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2554DE92901ACD600ED01DB /* LoginScreenViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginScreenViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2554DEC2901ACD600ED01DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2554DEE2901ACD600ED01DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				D2554DF52901ACD800ED01DB /* Assets.xcassets */,
 				D2554DF72901ACD800ED01DB /* LaunchScreen.storyboard */,
 				D2554DFA2901ACD800ED01DB /* Info.plist */,
+				D24F7A5D2903303600DFC5D5 /* GoogleService-Info.plist */,
 			);
 			path = LoginScreenViewCode;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			files = (
 				D2554DF92901ACD800ED01DB /* LaunchScreen.storyboard in Resources */,
 				D2554DF62901ACD800ED01DB /* Assets.xcassets in Resources */,
+				D24F7A5E2903303600DFC5D5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

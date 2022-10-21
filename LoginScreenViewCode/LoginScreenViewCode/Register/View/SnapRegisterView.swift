@@ -140,9 +140,8 @@ class SnapRegisterView: UIView {
 	func configImageAddUserConstarint(){
 		imageAddUser.snp.makeConstraints { make in
 			make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
-			make.centerX.equalTo(self.snp.centerX)
-			make.width.equalTo(150)
-			make.height.equalTo(150)
+			make.centerX.equalToSuperview()
+			make.width.height.equalTo(150)
 		}
 	}
 	
