@@ -16,10 +16,32 @@ class RegisterViewController: UIViewController {
 		view = registerView
 		navigationController?.isNavigationBarHidden = true
 	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		registerView?.delegate(delegate: self)
+		registerView?.configTextFieldDelegate(delegate: self)
+	}
+	
+	
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+extension RegisterViewController: UITextFieldDelegate{
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		textField.resignFirstResponder()
+	}
+}
 
-
+extension RegisterViewController: RegisterViewProtocol{
+	
+	func actionBackButton() {
+		navigationController?.popViewController(animated: true)
+	}
+	
+	func actionRegisterButton() {
+		
+	}
+	
+	
 }

@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
 		view = loginView
 		navigationController?.isNavigationBarHidden = true
 	}
-		
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		loginView?.delegate(delegate: self)
