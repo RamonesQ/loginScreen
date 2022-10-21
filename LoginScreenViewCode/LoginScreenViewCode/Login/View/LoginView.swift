@@ -68,7 +68,7 @@ class LoginView: UIView {
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.setTitle("Logar", for: .normal)
 		button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-		button.setTitleColor(.white, for: .normal)
+		button.setTitleColor(.lightGray, for: .normal)
 		button.clipsToBounds = true
 		button.layer.cornerRadius = 7.5
 		button.backgroundColor = UIColor(red: 3/255, green: 58/255, blue: 51/255, alpha: 1.0)
@@ -116,6 +116,27 @@ class LoginView: UIView {
 	}
 	@objc private func tappedRegisterButton(){
 		self.delegate?.actionRegisterButton()
+	}
+	
+	public func validaTextFields(){
+		guard let email: String = emailTextField.text else {return}
+		guard let password: String = passwordTextField.text else {return}
+		
+		if !email.isEmpty && !password.isEmpty{
+			configButtonEnable(true)
+		} else {
+			configButtonEnable(false)
+		}
+	}
+	
+	private func configButtonEnable(_ enable: Bool){
+		if enable{
+			loginButton.setTitleColor(.white, for: .normal)
+			loginButton.isEnabled = true
+		} else {
+			loginButton.setTitleColor(.lightGray, for: .normal)
+			loginButton.isEnabled = false
+		}
 	}
 	
 	required init?(coder: NSCoder) {

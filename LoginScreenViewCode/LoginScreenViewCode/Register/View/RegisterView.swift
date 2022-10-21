@@ -67,10 +67,11 @@ class RegisterView: UIView {
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.setTitle("Cadastrar", for: .normal)
 		button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-		button.setTitleColor(.white, for: .normal)
+		button.setTitleColor(.lightGray, for: .normal)
 		button.clipsToBounds = true
 		button.layer.cornerRadius = 7.5
 		button.backgroundColor = UIColor(red: 3/255, green: 58/255, blue: 51/255, alpha: 1.0)
+		button.isEnabled = false
 		button.addTarget(self, action: #selector(self.tappedRegisterButton), for: .touchUpInside)
 		return button
 	}()
@@ -108,6 +109,27 @@ class RegisterView: UIView {
 	}
 	@objc private func tappedRegisterButton(){
 		self.delegate?.actionRegisterButton()
+	}
+	
+	public func validaTextFields(){
+		guard let email: String = emailTextField.text else {return}
+		guard let password: String = passwordTextField.text else {return}
+		
+		if !email.isEmpty && !password.isEmpty{
+			configButtonEnable(true)
+		} else {
+			configButtonEnable(false)
+		}
+	}
+	
+	private func configButtonEnable(_ enable: Bool){
+		if enable{
+			registerButton.setTitleColor(.white, for: .normal)
+			registerButton.isEnabled = true
+		} else {
+			registerButton.setTitleColor(.lightGray, for: .normal)
+			registerButton.isEnabled = false
+		}
 	}
 	
 	private func setupConstraint(){

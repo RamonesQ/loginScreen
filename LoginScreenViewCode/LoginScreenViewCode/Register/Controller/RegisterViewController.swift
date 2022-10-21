@@ -38,9 +38,13 @@ extension RegisterViewController: RegisterViewProtocol{
 	func actionBackButton() {
 		navigationController?.popViewController(animated: true)
 	}
+
+	func textFieldDidEndEditing(_ textField: UITextField) {
+		registerView?.validaTextFields()
+	}
 	
 	func actionRegisterButton() {
-		
+		navigationController?.popViewController(animated: true)
 	}
 	
 	
