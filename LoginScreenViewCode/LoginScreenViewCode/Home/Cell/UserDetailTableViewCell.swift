@@ -6,29 +6,21 @@
 //
 
 import UIKit
+import SnapKit
 
 class UserDetailTableViewCell: UITableViewCell {
 	
 	static let identifier: String = "UserDetailTableViewCell"
 	
-	lazy var userImageView:UIImageView = {
-		let image = UIImageView()
-		image.translatesAutoresizingMaskIntoConstraints = false
-		image.contentMode = .scaleAspectFit
-		return image
-	}()
-	
-	lazy var nameLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.textColor = .black
-		return label
+	lazy var userDetailView:UserDetailView = {
+		let view = UserDetailView()
+		return view
 	}()
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		configSuperView()
-		setupConstraints()
+		ConfigConstraintsDescriptionCell()
 	}
 	
 	required init?(coder: NSCoder) {
@@ -36,26 +28,18 @@ class UserDetailTableViewCell: UITableViewCell {
 	}
 	
 	func configSuperView(){
-		contentView.addSubview(userImageView)
-		contentView.addSubview(nameLabel)
+		contentView.addSubview(userDetailView)
 	}
 	
 	public func setupCell(data: DataUser){
-		nameLabel.text = data.name
-		userImageView.image = UIImage(named: data.imageName)
+		userDetailView.nameLabel.text = data.name
+		userDetailView.userImageView.image = UIImage(named: data.imageName)
 	}
 	
-	private func setupConstraints() {
-		NSLayoutConstraint.activate([
-			userImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-			userImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-			userImageView.heightAnchor.constraint(equalToConstant: 80),
-			userImageView.widthAnchor.constraint(equalToConstant: 80),
-			
-			nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-			nameLabel.leadingAnchor.constraint(equalTo: userImageView.trailingAnchor, constant: 20),
-			
-		])
+	private func ConfigConstraintsDescriptionCell(){
+		userDetailView.snp.makeConstraints { make in
+			make.edges.equalToSuperview()
+		}
 	}
-	
+
 }
