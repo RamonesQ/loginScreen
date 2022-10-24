@@ -172,7 +172,7 @@ class SnapRegisterView: UIView {
 	
 	func configRegisterButtonConstarint(){
 		registerButton.snp.makeConstraints { make in
-			make.top.equalTo(passwordTextField.snp.bottom).offset(15)
+			make.top.equalTo(passwordTextField.snp.bottom).offset(40)
 			make.leading.equalTo(imageAddUser.snp.leading)
 			make.trailing.equalTo(imageAddUser.snp.trailing)
 			make.height.equalTo(60)
