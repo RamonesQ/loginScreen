@@ -43,21 +43,23 @@ extension LoginViewController: UITextFieldDelegate {
 
 extension LoginViewController: SnapLoginViewProtocol {
 	func actionLoginButton() {
-		// guard let login = snapLoginView else {return}
-		guard let email = snapLoginView?.emailTextField.text else {return}
-		guard let password = snapLoginView?.passwordTextField.text else {return}
+		navigationController?.pushViewController(HomeViewController(), animated: true)
 		
-		auth?.signIn(withEmail: email, password: password, completion: { (usuario, error) in
-			if error != nil {
-				self.alert?.getAlert(titulo: "Atenção", mensagem: "Dados incorretos \(String(describing: error))")
-			} else {
-				if usuario == nil {
-					self.alert?.getAlert(titulo: "Atenção", mensagem: "Tivemos um erro, tente mais tarde")
-				} else {
-					self.alert?.getAlert(titulo: "Parabéns", mensagem: "Usuário logado com sucesso")
-				}
-			}
-		})
+//		// guard let login = snapLoginView else {return}
+//		guard let email = snapLoginView?.emailTextField.text else {return}
+//		guard let password = snapLoginView?.passwordTextField.text else {return}
+//
+//		auth?.signIn(withEmail: email, password: password, completion: { (usuario, error) in
+//			if error != nil {
+//				self.alert?.getAlert(titulo: "Atenção", mensagem: "Dados incorretos \(String(describing: error))")
+//			} else {
+//				if usuario == nil {
+//					self.alert?.getAlert(titulo: "Atenção", mensagem: "Tivemos um erro, tente mais tarde")
+//				} else {
+//					self.alert?.getAlert(titulo: "Parabéns", mensagem: "Usuário logado com sucesso")
+//				}
+//			}
+//		})
 	}
 	
 	func actionRegisterButton() {
