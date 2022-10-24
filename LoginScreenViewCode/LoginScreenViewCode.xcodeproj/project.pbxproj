@@ -13,6 +13,8 @@
 		D2240F202906C7FA00796B6D /* UserDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2240F1F2906C7FA00796B6D /* UserDetailTableViewCell.swift */; };
 		D2240F232906CC0F00796B6D /* DataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2240F222906CC0F00796B6D /* DataUser.swift */; };
 		D2240F262906D6D800796B6D /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2240F252906D6D800796B6D /* UserDetailView.swift */; };
+		D2240F2A2906EEF400796B6D /* SportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2240F292906EEF400796B6D /* SportTableViewCell.swift */; };
+		D2240F2D2906F04800796B6D /* SportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2240F2C2906F04800796B6D /* SportView.swift */; };
 		D24F7A532902B4D900DFC5D5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F7A522902B4D900DFC5D5 /* RegisterView.swift */; };
 		D24F7A552902B4ED00DFC5D5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F7A542902B4ED00DFC5D5 /* RegisterViewController.swift */; };
 		D24F7A582902FC8E00DFC5D5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F7A572902FC8E00DFC5D5 /* LoginView.swift */; };
@@ -37,6 +39,8 @@
 		D2240F1F2906C7FA00796B6D /* UserDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D2240F222906CC0F00796B6D /* DataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUser.swift; sourceTree = "<group>"; };
 		D2240F252906D6D800796B6D /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		D2240F292906EEF400796B6D /* SportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportTableViewCell.swift; sourceTree = "<group>"; };
+		D2240F2C2906F04800796B6D /* SportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportView.swift; sourceTree = "<group>"; };
 		D24F7A522902B4D900DFC5D5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		D24F7A542902B4ED00DFC5D5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D24F7A572902FC8E00DFC5D5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = LoginScreenViewCode/Register/Controller/LoginView.swift; sourceTree = SOURCE_ROOT; };
@@ -119,8 +123,8 @@
 		D2240F1E2906C7BF00796B6D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D2240F242906D6B600796B6D /* CustomView */,
-				D2240F1F2906C7FA00796B6D /* UserDetailTableViewCell.swift */,
+				D2240F282906EECD00796B6D /* SportTableViewCell */,
+				D2240F272906EE8600796B6D /* UserDetailTableViewCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -137,6 +141,32 @@
 			isa = PBXGroup;
 			children = (
 				D2240F252906D6D800796B6D /* UserDetailView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		D2240F272906EE8600796B6D /* UserDetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D2240F242906D6B600796B6D /* CustomView */,
+				D2240F1F2906C7FA00796B6D /* UserDetailTableViewCell.swift */,
+			);
+			path = UserDetailTableViewCell;
+			sourceTree = "<group>";
+		};
+		D2240F282906EECD00796B6D /* SportTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D2240F2B2906F01E00796B6D /* CustomView */,
+				D2240F292906EEF400796B6D /* SportTableViewCell.swift */,
+			);
+			path = SportTableViewCell;
+			sourceTree = "<group>";
+		};
+		D2240F2B2906F01E00796B6D /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				D2240F2C2906F04800796B6D /* SportView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -352,9 +382,11 @@
 				D2240F1D2906BF8C00796B6D /* HomeView.swift in Sources */,
 				D2240F1B2906BF7400796B6D /* HomeViewController.swift in Sources */,
 				D24F7A552902B4ED00DFC5D5 /* RegisterViewController.swift in Sources */,
+				D2240F2A2906EEF400796B6D /* SportTableViewCell.swift in Sources */,
 				D24F7A5A2902FCC600DFC5D5 /* SnapLoginView.swift in Sources */,
 				D2240F232906CC0F00796B6D /* DataUser.swift in Sources */,
 				D2554DED2901ACD600ED01DB /* AppDelegate.swift in Sources */,
+				D2240F2D2906F04800796B6D /* SportView.swift in Sources */,
 				D2240F262906D6D800796B6D /* UserDetailView.swift in Sources */,
 				D2554DEF2901ACD600ED01DB /* SceneDelegate.swift in Sources */,
 			);
