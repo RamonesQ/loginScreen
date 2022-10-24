@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2240F162906B7A500796B6D /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2240F152906B7A500796B6D /* Alert.swift */; };
 		D24F7A532902B4D900DFC5D5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F7A522902B4D900DFC5D5 /* RegisterView.swift */; };
 		D24F7A552902B4ED00DFC5D5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F7A542902B4ED00DFC5D5 /* RegisterViewController.swift */; };
 		D24F7A582902FC8E00DFC5D5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F7A572902FC8E00DFC5D5 /* LoginView.swift */; };
@@ -25,6 +26,7 @@
 		02FCEA6EC110B0C31FA77288 /* Pods-LoginScreenViewCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginScreenViewCode.debug.xcconfig"; path = "Target Support Files/Pods-LoginScreenViewCode/Pods-LoginScreenViewCode.debug.xcconfig"; sourceTree = "<group>"; };
 		A9F82A7E65BE83B59648EBE3 /* Pods-LoginScreenViewCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginScreenViewCode.release.xcconfig"; path = "Target Support Files/Pods-LoginScreenViewCode/Pods-LoginScreenViewCode.release.xcconfig"; sourceTree = "<group>"; };
 		BBFE9E633BCC7F764A61013A /* Pods_LoginScreenViewCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginScreenViewCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2240F152906B7A500796B6D /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		D24F7A522902B4D900DFC5D5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		D24F7A542902B4ED00DFC5D5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D24F7A572902FC8E00DFC5D5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = LoginScreenViewCode/Register/Controller/LoginView.swift; sourceTree = SOURCE_ROOT; };
@@ -67,6 +69,14 @@
 				A9F82A7E65BE83B59648EBE3 /* Pods-LoginScreenViewCode.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D2240F142906B78D00796B6D /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				D2240F152906B7A500796B6D /* Alert.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		D24F7A4F2902B4A700DFC5D5 /* Register */ = {
@@ -116,6 +126,7 @@
 		D2554DEB2901ACD600ED01DB /* LoginScreenViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				D2240F142906B78D00796B6D /* Alert */,
 				D24F7A4F2902B4A700DFC5D5 /* Register */,
 				D2554E002901B46900ED01DB /* Login */,
 				D2554DEC2901ACD600ED01DB /* AppDelegate.swift */,
@@ -269,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2240F162906B7A500796B6D /* Alert.swift in Sources */,
 				D24F7A532902B4D900DFC5D5 /* RegisterView.swift in Sources */,
 				D24F7A582902FC8E00DFC5D5 /* LoginView.swift in Sources */,
 				D2554DF12901ACD600ED01DB /* LoginViewController.swift in Sources */,

@@ -13,6 +13,7 @@ class RegisterViewController: UIViewController {
 	var registerView: SnapRegisterView?
 	
 	var auth: Auth?
+	var alert: Alert?
 	
 	override func loadView() {
 		registerView = SnapRegisterView()
@@ -25,6 +26,7 @@ class RegisterViewController: UIViewController {
 		registerView?.delegate(delegate: self)
 		registerView?.configTextFieldDelegate(delegate: self)
 		auth = Auth.auth()
+		alert = Alert(controller: self)
 	}
 }
 
@@ -52,10 +54,12 @@ extension RegisterViewController: SnapRegisterViewProtocol{
 		
 		auth?.createUser(withEmail: email, password: password, completion: { (result, error) in
 			if error != nil {
-				print("\(String(describing: error))")
+				self.alert?.getAlert(titulo: "Atenção", mensagem: "\(String(describing: error))")
 			} else {
 				print("\(email) Cadastrado")
-				self.navigationController?.popViewController(animated: true)
+				self.alert?.getAlert(titulo: "Parabéns", mensagem: "Usuário cadastrado com sucesso", completion: {
+					self.navigationController?.popViewController(animated: true)
+				})
 			}
 		})
 	}

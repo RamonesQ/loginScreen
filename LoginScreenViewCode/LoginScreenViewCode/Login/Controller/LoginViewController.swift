@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
 	
 	var snapLoginView: SnapLoginView?
 	var auth: Auth?
+	var alert: Alert?
 	
 	override func loadView() {
 		snapLoginView = SnapLoginView()
@@ -25,6 +26,7 @@ class LoginViewController: UIViewController {
 		auth = Auth.auth()
 		snapLoginView?.delegate(delegate: self)
 		snapLoginView?.configTextFieldDelegate(delegate: self)
+		alert = Alert(controller: self)
 	}
 }
 
@@ -47,12 +49,12 @@ extension LoginViewController: SnapLoginViewProtocol {
 		
 		auth?.signIn(withEmail: email, password: password, completion: { (usuario, error) in
 			if error != nil {
-				print("\(String(describing: error))")
+				self.alert?.getAlert(titulo: "Atenção", mensagem: "Dados incorretos \(String(describing: error))")
 			} else {
 				if usuario == nil {
-					print("Tivemos um erro, tente mais tarde")
+					self.alert?.getAlert(titulo: "Atenção", mensagem: "Tivemos um erro, tente mais tarde")
 				} else {
-					print("Usuario logado")
+					self.alert?.getAlert(titulo: "Parabéns", mensagem: "Usuário logado com sucesso")
 				}
 			}
 		})
